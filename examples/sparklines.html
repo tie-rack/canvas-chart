@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <title>Sparklines with canvas-chart.js</title>
+    <script language="javascript" src="../canvas-chart.js"></script>
+  </head>
+  <body>
+    <p>
+      Here's a little sparkline (it's the DJIA!):
+      <canvas id="sparkline-1" width="30" height="15"></canvas>
+    </p>
+    <script language="javascript" type="text/javascript">
+      (function() {
+        var dowJones = new CanvasChart([8016, 7968, 7788, 7839, 8083, 8082, 8057, 7914, 8029, 8125], 'sparkline-1', '#0000ff');
+        dowJones.baseValue = 7750;
+        dowJones.draw();
+      })();
+    </script>
+  </body>
+</html>
