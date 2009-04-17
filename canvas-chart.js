@@ -24,8 +24,6 @@ pegged at 2, and there's a little 1 in the yForValue function that
 serves to make sure maximum values have their lines completely in the
 chart. Those should get factored out in a nice way.
 
-- Figure out why this is only working in Firefox and Chrome.
-
 - HEY ALSO, yeah, there's some refactoring to do. This was thrown
 together pretty quick, and I need to make the tests better.
 
