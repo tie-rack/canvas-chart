@@ -6,31 +6,25 @@
     <link rel="stylesheet" type="text/css" href="jsunittest.css" />
   </head>
   <body>
-    <canvas id="test-canvas" width="300" height="30"></canvas>
+    <canvas id="test-canvas" width="300" height="28"></canvas>
     <div id="testlog"></div>
     <script type="text/javascript" language="javascript">
       new Test.Unit.Runner({
         setup: function() { with(this) {
-          chart = new CanvasChart;
-          values = [3,4,6,2,8,3,4];
-          chartWithValues = new CanvasChart(values, 'test-canvas');
+          chart = new CanvasChart({values: [1,7,2,6,3,5,4], canvas: 'test-canvas'});
         }},
-        testCanvasChartIsDefined: function() { with(this) {
-          assertNotUndefined(CanvasChart);
+        testBaseValue: function() { with(this) {
+          var chartAllPositive = new CanvasChart({values: [1,2], canvas: 'test-canvas'});
+          var chartWithNegative = new CanvasChart({values: [-1,0], canvas: 'test-canvas'});
+          var chartWithZeroAndPositive = new CanvasChart({values: [1,0], canvas: 'test-canvas'});
+
+         assertEqual(0, chartAllPositive.baseValue());
+         assertEqual(-1, chartWithNegative.baseValue());
+         assertEqual(0, chartWithZeroAndPositive.baseValue());
         }},
-        testChartsHaveValues: function() { with(this) {
-          assertNotUndefined(chart.values);
-        }},
-        testChartsCanBeInitializedWithValues: function() { with(this) {
-          assertEnumEqual(values, chartWithValues.values);
-        }},
-        testChartsKnowTheMaxValue: function() { with(this) {
-          assertEqual(8, chartWithValues.max());
-          chartWithValues.values.push(100);
-          assertEqual(100, chartWithValues.max());
-        }},
-        testChartsKnowTheWidthPerValue: function () { with(this) {
-          assertEqual(50, chartWithValues.widthPerValue());
+        testWidthPerValue: function () { with(this) {
+          assertEqual(300, chart.canvas.width);
+          assertEqual(50, chart.widthPerValue());
         }}
       });
     </script>
