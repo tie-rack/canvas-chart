@@ -19,8 +19,6 @@ There's also a bunch of optional properties. Here's a rundown:
             You can use any of the styles strokeStyle() takes.
  baseValue: The value that's represented by the bottom of the chart.
             The default is 0 or the lowest value (whichever is less).
- maxValue:  The value that's represented by the top of the chart. The
-            default is the maxinum value in values.
  lineWidth: The width of the line for the chart. The default is 2 for
             some reason.
  lineJoin:  The kind of join for the line segments in the chart.  The
@@ -29,6 +27,9 @@ There's also a bunch of optional properties. Here's a rundown:
 
 TODO:
 
+- Implement this (the opposite of baseValue):
+    maxValue: The value that's represented by the top of the chart. The
+              default is the maxinum value in values.
 - HEY ALSO, yeah, there's some refactoring to do. This was thrown
 together pretty quick, and I need to make more and better tests.
 
