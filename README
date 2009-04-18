@@ -1,0 +1,33 @@
+
+ CanvasChart - an extremely simple chart generator
+
+How to use it:
+
+ // Create a CanvasChart object:
+ var chart = new CanvasChart({values: [1,5,0,4,3,5,7], canvas: 'canvas-id'});
+ // Draw it
+ chart.draw();
+
+The object you pass to the CanvasChart constructor must have at least two
+properties: values and canvas. The values property needs to be an
+array of numbers to be charted. The canvas property needs to be the
+DOM ID of the canvas element to draw the chart in.
+
+There's also a bunch of optional properties. Here's a rundown:
+
+ color:     The color of the line you want drawn. The default is black.
+            You can use any of the styles strokeStyle() takes.
+ baseValue: The value that's represented by the bottom of the chart.
+            The default is 0 or the lowest value (whichever is less).
+ maxValue:  The value that's represented by the top of the chart. The
+            default is the maxinum value in values.
+ lineWidth: The width of the line for the chart. The default is 2 for
+            some reason.
+ lineJoin:  The kind of join for the line segments in the chart.  The
+            default is 'round'. The available options are those that
+            canvas supports.
+
+TODO:
+
+- HEY ALSO, yeah, there's some refactoring to do. This was thrown
+together pretty quick, and I need to make more and better tests.
